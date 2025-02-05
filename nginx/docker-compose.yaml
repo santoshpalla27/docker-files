@@ -10,6 +10,10 @@ services:
       - nginx:/usr/share/nginx/html
     networks:
       - nginx_network
+    deploy:
+      resources:
+        limits:
+          memory: 12M
 
 volumes:
   nginx:
