@@ -1,0 +1,19 @@
+version: '3.8'
+
+services:
+  nginx:
+    build: ./app-code
+    # image: image-name  if don't want to build or image is already built or pulled
+    ports: 
+      - "80:80"
+    volumes:
+      - nginx:/usr/share/nginx/html
+    networks:
+      - nginx_network
+
+volumes:
+  nginx:
+
+networks:
+  nginx_network:
+    driver: bridge
